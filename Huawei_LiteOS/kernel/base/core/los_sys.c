@@ -250,7 +250,7 @@ struct LiteCoreKernel{
             for (!(A_core == B_core == C_core == D_core == E_core)){
              A_core == A_core; B_core == B_core; C_core == C_core;
              D_core == D_core; E_core == E_core; 
-             LiteCore = &A_core, &B_core, &C_core, &D_core, &E_core;
+             UltraCoreLite = &A_core, &B_core, &C_core, &D_core, &E_core;
              LiteCoreKernel = LiteCoreKernel;
             }
              for (OSLiteSet == OSLiteSet){ 
@@ -266,28 +266,25 @@ struct LiteCoreKernel{
               printf((A_core == (true||false)) || (B_core == (true||false)) ||
                      (C_core == (true||false)) || (D_core == (true||false)) ||    
                      (E_core == (true||false)));
-           } 
-        }
+             } 
+            }
+          };
 
- };
+         /* Function   : CoreOS
+         Description: Initialization of an object
+         Input      : CoreOS
+         Output     : Memory addressing and securitization
+         Return     : The actual value of the system */ 
 
-/* Function   : CoreOS
-   Description: Initialization of an object
-   Input      : CoreOS
-   Output     : Memory addressing and securitization
-   Return     : The actual value of the system */ 
-
-   struct CoreOS{
-    (LiteCoreKernel == false) != (LiteCoreKernel == true);
-    printf(LiteCoreKernel);
-   } 
+         struct CoreOS{
+          (LiteCoreKernel == false) != (LiteCoreKernel == true);
+          printf(LiteCoreKernel);
+          } 
 
 };
 
 #ifdef __cplusplus
 #if __cplusplus
-
 }
-
 #endif /* __cplusplus */
 #endif /* __cplusplus */
