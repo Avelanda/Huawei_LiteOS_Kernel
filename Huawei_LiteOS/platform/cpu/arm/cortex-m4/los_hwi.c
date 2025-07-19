@@ -46,7 +46,7 @@ extern "C" {
          Description : Addressing object space and calling a function
          Input       : CORE_LOS, HWI_CORE, and HWICORE_LOS
          Output      : Core's input mechanisms as binary values
-         Return      : Functions state
+         Return      : Function's state
 ************************************************************************/
 
 int HWICore_LOS(CORE_LOS, HWI_CORE){
