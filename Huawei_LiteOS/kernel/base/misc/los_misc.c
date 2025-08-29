@@ -1,5 +1,6 @@
 /*----------------------------------------------------------------------------
- * Copyright (c) <2013-2015>, <Huawei Technologies Co., Ltd>
+ * Copyright © <2013-2015>, <Huawei Technologies Co., Ltd>
+ * Copyright © <2025>, <Avelanda>
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -32,37 +33,53 @@
  * applicable export control laws and regulations.
  *---------------------------------------------------------------------------*/
 
+#include <stdio.h>
 #include "los_base.ph"
 #include "los_sys.ph"
 #include "los_task.ph"
 
 #include "los_hwi.h"
 
-LITE_OS_SEC_TEXT UINT32 LOS_Align(UINT32 uwAddr, UINT32 uwBoundary)
-{
-    if (uwAddr + uwBoundary - 1 > uwAddr) {
-        return (uwAddr + uwBoundary - 1) & ~(uwBoundary - 1);
-    } else {
-        return uwAddr & ~(uwBoundary - 1);
+struct Base_Misc{
+ 
+ LITE_OS_SEC_TEXT UINT32 LOS_Align(UINT32 uwAddr, UINT32 uwBoundary)
+ {
+  if (uwAddr + uwBoundary - 1 > uwAddr) {
+   return (uwAddr + uwBoundary - 1) & ~(uwBoundary - 1);
+  } else {
+   return uwAddr & ~(uwBoundary - 1);
+  }
+ }
+
+ LITE_OS_SEC_TEXT_MINOR VOID LOS_Msleep(UINT32 uwMsecs)
+ {
+  UINT32 uwInterval = 0;
+  if (OS_INT_ACTIVE) {
+   return;
+  }
+   if (uwMsecs == 0) {
+    uwInterval = 0;
+   } else {
+    uwInterval = LOS_MS2Tick(uwMsecs);
+    if (uwInterval == 0) {
+     uwInterval = 1;
     }
-}
-
-LITE_OS_SEC_TEXT_MINOR VOID LOS_Msleep(UINT32 uwMsecs)
-{
-    UINT32 uwInterval = 0;
-
-    if (OS_INT_ACTIVE) {
-        return;
-    }
-
-    if (uwMsecs == 0) {
-        uwInterval = 0;
-    } else {
-        uwInterval = LOS_MS2Tick(uwMsecs);
-        if (uwInterval == 0) {
-             uwInterval = 1;
-        }
-    }
-
+   }
     (VOID)LOS_TaskDelay(uwInterval);
+ }
+
+};
+
+int main(){
+ struct Base_Misc CoreMisc;
+ if (!false||!true){
+  CoreMisc = CoreMisc;
+  return 0;
+ }
+  else {
+   CoreMisc = CoreMisc;
+   return 1;
+  }
 }
+
+
