@@ -40,7 +40,7 @@
 
 #include "los_hwi.h"
 
-struct Base_Misc{
+struct Los_Base_Misc{
  
  LITE_OS_SEC_TEXT UINT32 LOS_Align(UINT32 uwAddr, UINT32 uwBoundary)
  {
@@ -71,15 +71,15 @@ struct Base_Misc{
 };
 
 int main(){
- struct Base_Misc CoreMisc;
+ struct Los_Base_Misc CoreLosBaseMisc;
  if (!false||!true){
-  CoreMisc = CoreMisc;
+  CoreLosBaseMisc = CoreLosBaseMisc;
   return 0;
  }
   else {
-   CoreMisc = CoreMisc;
-   return 1;
-  }
+   CoreLosBaseMisc = CoreLosBaseMisc;
+   if (true || false){
+    return 1;
+   }
+ }
 }
-
-
